@@ -1,0 +1,20 @@
+<input type="text" [([(ngModel)])]="save_the_clothe"/>
+<button class="linkbutton" (click)="saveClothe()">Add Clothe</button>
+<p *ngIf="save_the_clothe">
+    The Clothe To Save Is: <strong>{{save_the_clothe}}</strong>
+</p>
+<h3>Clothe List</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Article</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let clothe of clothes_list; let i = index">
+            <td>{{clothe}}</td>
+            <td><button (click)="deleteClothe(i)">Delete</button></td>
+        </tr>
+    </tbody>
+</table>
